@@ -56,7 +56,7 @@ ul {
 
 li {
     padding-top: 1px;
-    color: rgba(150, 46, 80, 0.863);
+    color: rgba(134, 42, 72, 0.863);
     font-weight: bold;
     font-size: 14pt;
     text-align: left;
@@ -88,7 +88,7 @@ a:hover {
     text-decoration: underline;
     font-weight: bold;
     font-size: 13pt;
-    background-color: hex(#ED1E79);
+    background-color: rgba(134, 42, 72, 0.863);
     transition: background .3s ease;
 }
 
@@ -97,9 +97,9 @@ h1 {
     text-align: left;
     padding-left: 10px;
     margin-top: 3px;
-    color: hex(#fcee0a)
+    color: rgb(252, 240, 10)
 }
 
 .kur {
-    color: hex(#fcee0a);
+    color: rgb(252, 238, 10);
 }
