@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="unicode">
+    <meta name='description' content='A simple startpage, suited to my needs.' />
+    <meta name='author' content='Milen Hristov' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>awesome@startpage ~</title>
+    <link type="text/css" href="../startpage/css/styles.css" rel="stylesheet">
+    </link>
+</head>
+
+<body onload="startTime()">
+
+    <script type='text/javascript'>
+        function startTime() {
+            var today = new Date();
+            var hr = today.getHours();
+            var min = today.getMinutes();
+            var sec = today.getSeconds();
+            ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+            hr = (hr == 0) ? 12 : hr;
+            hr = (hr > 12) ? hr - 12 : hr;
+            //Add a zero in front of numbers<10
+            hr = checkTime(hr);
+            min = checkTime(min);
+            sec = checkTime(sec);
+            document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+
+            var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var curWeekDay = days[today.getDay()];
+            var curDay = today.getDate();
+            var curMonth = months[today.getMonth()];
+            var curYear = today.getFullYear();
+            var date = curWeekDay + ", " + curDay + " " + curMonth;
+            document.getElementById("date").innerHTML = date;
+
+            var time = setTimeout(function () { startTime() }, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+    <div class="clockdate">
+        <div class="clockdate-wrapper">
+            <div id="date"></div>
+            <div id="clock"></div>
+        </div>
+    </div>
+
+    <div class="search" style="display: block;">
+        <form class="ddg textField" action="https://duckduckgo.com/" method="get">
+            <input class="input_box" type="text" name="q" placeholder="ツ     Search with DuckDuckGo" />
+        </form>
+        <form class="ddg textField" action="https://www.startpage.com/en?t=" method="get">
+            <input class="input_box" type="text" name="q" placeholder="         Search with Startpage   " />
+        </form>
+    </div>
+
+    <div class="bookmarks">
+        <div class="productivity">
+            <h1><span class="kur">tools, learn</span> {</h1>
+            <ul>
+                <li>course: <a href='https://www.udemy.com/' class='button'>Udemy</a>;</li>
+                <li>course: <a href='https://authn.edx.org/login?next=%2Fdashboard' class='button'>edx</a>;</li>
+                <li>course: <a href='https://www.pluralsight.com/' class='button'>pluralsight</a>;</li>
+                <li>prog: <a href='http://stackoverflow.com/' class='button'>StackOverflow</a>;</li>
+                <li>prog: <a href='https://www.codewars.com/users/sign_in' class='button'>codeWars</a>;</li>
+                <li>cybersecurity: <a href='https://sekurak.pl/' class='button'>sekurak</a>;</li>
+                <li>cybersecurity: <a href='https://niebezpiecznik.pl/' class='button'>niebezpiecznik</a>;</li>
+                <li>cybersecurity: <a href='https://kapitanhack.pl/' class='button'>kapitanhack</a>;</li>
+                <li>cybersecurity: <a href='https://zaufanatrzeciastrona.pl/' class='button'>z3s</a>;</li>
+                <li>hacking: <a href='https://tryhackme.com/login' class='button'>TryHackMe</a>;</li>
+                <li>hacking: <a href='https://www.hackthebox.com/' class='button'>hackthebox</a>;</li>
+                <li>hacking: <a href='http://h1.nobbd.de/index.php?start=20' class='button'>hackerone</a>;</li>
+                <li>hacking: <a href='https://blog.intigriti.com/category/bugbytes/' class='button'>bugbytes</a>;</li>
+                <li>note: <a href='https://www.notion.so/Quick-Note-f797a2ba11f34a27b168cfc7fbe35d87'
+                        class='button'>notion</a>;</li>
+
+            </ul>
+            <h1>}</h1>
+        </div>
+
+        <div class="recreation">
+            <h1><span class="kur">media, games</span> {</h1>
+            <ul>
+                <li>gaming: <a href='https://www.gry-online.pl/' class='button'>gry-online.pl</a>;</li>
+                <li>vid: <a href='https://www.youtube.com/feed/subscriptions/' class='button'>YouTube</a>;</li>
+                <li>vid: <a href='https://fmovies.wtf/user/watchlist' class='button'>fmovies</a>;</li>
+                <li>vid: <a href='https://www.primevideo.com/storefront/home/ref=atv_nb_logo' class='button'>prime</a>;
+                </li>
+                <li>vid: <a href='https://www.filmweb.pl/' class='button'>filmweb</a>;</li>
+                <li>vid: <a href='https://polsatgo.pl' class='button'>polsatgo</a>;</li>
+                <li>radio: <a href='http://radio.garden/visit/gdansk/K5WCFJ6K' class='button'>radio_garden</a>;</li>
+                <li>news: <a href='https://www.trojmiasto.pl/' class='button'>trojmiasto</a>;</li>
+                <li>news: <a href='https://tvn24.pl/' class='button'>tvn24</a>;</li>
+                <li>tech: <a href='https://www.instalki.pl/' class='button'>instalki</a>;</li>
+                <li>tech: <a href='https://thehackernews.com/' class='button'>hackernews</a>;</li>
+                <li>mmo: <a href='https://mmorpg.org.pl/' class='button'>mmorpg.pl</a>;</li>
+                <li>stream: <a href='https://www.twitch.tv/'' class=' button'>twitch</a>;</li>
+                <li>magic: <a href='https://unblockit.how/' class='button'>unblockit</a>;</li>
+            </ul>
+            <h1>}</h1>
+        </div>
+
+        <div class="recreation">
+            <h1><span class="kur">other</span> {</h1>
+            <ul>
+                <li>/r: <a href='http://reddit.com' class='button'>reddit</a>;</li>
+                <li>fb: <a href='https://www.facebook.com/' class='button'>fb</a>;</li>
+                <li>social: <a href='https://queer.pl/' class='button'>queer</a>;</li>
+                <li>finax: <a href='https://www.finax.eu/pl/login' class='button'>finax</a>;</li>
+                <li>twitter: <a href='https://twitter.com/home' class='button'>twitter</a>;</li>
+                <li>tweetdeck: <a href='https://tweetdeck.twitter.com/'' class=' button'>tweetdeck</a>;</li>
+                <li>promos: <a href='https://lowcygier.pl/' class='button'>lowcy</a>;</li>
+                <li>promos: <a href='https://www.pepper.pl/' class='button'>pepper</a>;</li>
+                <li>promos: <a href='https://gg.deals/' class='button'>gg.deals</a>;</li>
+                <li>promos: <a href='https://www.epicbundle.com/' class='button'>epic_bundles</a>;</li>
+                <li>shop: <a href='https://allegro.pl/' class='button'>allegro</a>;</li>
+                <li>shop: <a href='https://www.epicgames.com/store/en-US/' class='button'>epicstore</a>;</li>
+                <li>shop: <a href='https://store.steampowered.com/' class='button'>steam</a>;</li>
+
+                <li>mail: <a href='https://gmail.com' class='button'>gmail</a>;</li>
+                <li>mail: <a href='https://account.protonmail.com/login' class='button'>proton</a>;</li>
+            </ul>
+            <h1>}</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
